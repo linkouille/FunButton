@@ -1,0 +1,4 @@
+Texture Mur
+Défilement des obstacles
+Ombre sur les sprites
+Oeil
