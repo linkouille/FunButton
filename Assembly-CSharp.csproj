@@ -72,8 +72,14 @@
     <Compile Include="Assets\Script\Button.cs" />
     <Compile Include="Assets\Script\EffectHolder.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\SimpleKeyBoardMovement.cs" />
     <Compile Include="Assets\Script\SoundHolder.cs" />
+    <Compile Include="Assets\Script\Sprite3DRender.cs" />
+    <Compile Include="Assets\Script\TilingTexture.cs" />
     <None Include="Assets\Imported\DOTween\readme.txt" />
+    <None Include="Assets\SFX\Materials\Shader\Diffuse-Shadow.shader" />
+    <None Include="Assets\SFX\Materials\Shader\$Sprites-Bumped Diffuse.shader" />
+    <None Include="Assets\SFX\Materials\Shader\$CutoutBumpwithShadows.shader" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Program Files/Unity/Version/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -602,14 +608,35 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>D:/Program Files/Unity/Version/2019.4.13f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect.Editor">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -623,29 +650,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
@@ -653,17 +665,11 @@
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>D:/Bureau/Code/Unity/FunButton/FunButton/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
