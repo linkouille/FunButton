@@ -70,6 +70,7 @@
     <Compile Include="Assets\Imported\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Imported\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\Script\Button.cs" />
+    <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\EffectHolder.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\SimpleKeyBoardMovement.cs" />

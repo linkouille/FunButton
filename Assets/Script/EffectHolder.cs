@@ -16,7 +16,7 @@ public class EffectHolder : MonoBehaviour
 
     public void PlayEffect(Effect id, Vector3 pos)
     {
-        GameObject e = GameObject.Instantiate(effect[(int)id], pos, Quaternion.identity, null);
+        GameObject e = GameObject.Instantiate(effect[(int)id], pos, Quaternion.Euler(50,0,0), null);
         float lifeTime = e.GetComponent<ParticleSystem>() ? e.GetComponent<ParticleSystem>().main.duration : 5;
         Destroy(e.gameObject, lifeTime);
     }
