@@ -7,9 +7,15 @@ public class Sprite3DRender : MonoBehaviour
 {
     public Texture text;
 
+    [SerializeField] private Material material;
+
     void Update()
     {
-        if(text != GetComponent<Renderer>().material.mainTexture)
-            GetComponent<Renderer>().material.mainTexture = text;
+        if(text != material.mainTexture)
+        {
+            material.mainTexture = text;
+
+        }
+
     }
 }

@@ -31,6 +31,10 @@ public class Button : MonoBehaviour
 
     [SerializeField] private Player p;
 
+    [SerializeField] private float timeSpamLimit;
+
+    [SerializeField] private float spamCount;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -53,6 +57,7 @@ public class Button : MonoBehaviour
             {
                 SoundHolder.current.PlaySound(0);
             }
+            spamCount ++;
         }
 
         if (keyState)
@@ -61,16 +66,25 @@ public class Button : MonoBehaviour
             if (timeSpend >= waitShake)
             {
                 mainCam.transform.DOComplete();
-                mainCam.transform.DOShakePosition(0.5f, shakeAmount, 1, 90, false, true);
+                // mainCam.transform.DOShakePosition(0.5f, shakeAmount, 1, 90, false, false);
+                // mainCam.DOFieldOfView();
                 shakeAmount = Mathf.Lerp(shakeAmount, maxAmount, shakeSpeed);
             }
+
+            if(timeSpend >= timeSpamLimit)
+                spamCount = 0;
         }
         else
         {
             shakeAmount = 0;
             timeSpend = 0;
         }
-        
+
+        if(spamCount >= 2){
+            Debug.Log("Dash");
+            p.Dash();
+            spamCount = 0;
+        }
     }
 
 }

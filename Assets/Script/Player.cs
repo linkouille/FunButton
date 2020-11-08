@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public bool run;
 
     [SerializeField] private float speed;
+    [SerializeField] private float dashForce;
     [SerializeField] private Vector3 dir;
 
     private Rigidbody rb;
@@ -29,5 +30,9 @@ public class Player : MonoBehaviour
             rb.velocity = dir * speed;
         }
 
+    }
+
+    public void Dash(){
+        rb.AddForce(dir * dashForce, ForceMode.VelocityChange);
     }
 }
