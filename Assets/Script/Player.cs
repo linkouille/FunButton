@@ -24,15 +24,23 @@ public class Player : MonoBehaviour
     {
         anim.SetBool("Run", run);
 
-
         if (run)
         {
             rb.velocity = dir * speed;
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
         }
 
     }
 
     public void Dash(){
         rb.AddForce(dir * dashForce, ForceMode.VelocityChange);
+    }
+
+    public void Dead()
+    {
+        //Destroy(this.gameObject);
     }
 }

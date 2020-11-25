@@ -56,7 +56,14 @@ public class Watcher : MonoBehaviour
 
             if(Physics.Raycast(transform.position, stepDir, out raycastHits[i],maxDistance)){
                 vertices[i+1] = raycastHits[i].point - transform.position;
-            }else {
+
+                if (raycastHits[i].collider.GetComponent<Player>())
+                {
+                    raycastHits[i].collider.GetComponent<Player>().SendMessage("Dead");
+                }
+
+            }
+            else {
                 vertices[i+1] = transform.position + stepDir * maxDistance - transform.position;
             }
         }
